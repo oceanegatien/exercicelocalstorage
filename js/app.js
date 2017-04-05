@@ -1,20 +1,21 @@
 $( document ).ready(function() {
 
 	retourStorage();
+    var storage= [];
 
 
     $('#btn').on('click', function () {
-    	var storage= $('#inp').val();
-    	localStorage.setItem('string', storage);
+    	storage.push($('#inp').val());
+    	localStorage.setItem('array', storage);
    
     	$('#inp').val("");
     });
 
 	function retourStorage() {
 	
-		var retour = localStorage.getItem('string');
+		var retour = localStorage.getItem('array');
 			if (retour !== null) {
-				$('#storage').html("<p>"+retour+"</p>");
+				$('#storage').html("<h1>"+retour+"</h1>");
 			}
 	}
 
